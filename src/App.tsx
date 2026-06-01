@@ -24,7 +24,7 @@ export interface Project {
 }
 
 const personalInfo = {
-  name: "전지민",
+  name: "지민",
   enName: "Jeon-Jimin",
   logoText: "Jimin.",
   email: "jeonjimin@smail.kongju.ac.kr",
@@ -84,8 +84,9 @@ const projects: Project[] = [
   {
     title: 'IOT클릭봇',
     description: 'MQTT 프로토콜을 기반으로 한 IoT 원격 클릭 제어 시스템입니다. 실시간 상태 모니터링 및 제어 대시보드를 제공합니다.',
-    tech: ['Node.js', 'Express', 'MQTT', 'JavaScript', 'HTML/CSS'],
-    github: 'https://github.com/rema03/iot-clickbot',
+    tech: ['ATmega128','esp8266(Arduino)','Node.js', 'Express', 'MQTT'],
+    github: 'https://github.com/rema03/iot',
+    live: 'https://iot.jimindev.com',
   },
   {
     title: '준비 중...',
