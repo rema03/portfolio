@@ -48,23 +48,19 @@ const skills: SkillCategory[] = [
   },
   {
     category: "프론트엔드",
-    items: ["React", "HTML", "CSS"],
+    items: ["HTML", "CSS"],
   },
   {
     category: "백엔드",
-    items: ["Python-Django", "WebSocket", "SQLite"],
-  },
-  {
-    category: "임베디드",
-    items: ["Atmega"],
-  },
+    items: ["Python-Django"],
+  }
 ];
 
 const interests = [
   "웹 개발",
+  "어플 개발",
   "정보통신",
-  "사용자 경험 디자인",
-  "데이터베이스 설계",
+  "IoT",
 ];
 
 const projects: Project[] = [
@@ -87,6 +83,13 @@ const projects: Project[] = [
     tech: ['ATmega128','esp8266(Arduino)','Node.js', 'Express', 'MQTT'],
     github: 'https://github.com/rema03/iot',
     live: 'https://iot.jimindev.com',
+  },
+   {
+    title: 'jiminstore',
+    description: '지민 스토어는 next.js와 typescript와 tailwindcss를 사용하여 제작된 쇼핑몰 웹사이트입니다. 사용자 친화적인 UI와 원활한 쇼핑 경험을 제공합니다.',
+    tech: ['Next.js', 'TypeScript', 'TailwindCSS'],
+    github: 'https://github.com/rema03/store',
+    live: 'https://shop.jimindev.com',
   },
   {
     title: '준비 중...',
@@ -234,7 +237,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>&copy; {new Date().getFullYear()} {personalInfo.enName}. Built with React & TypeScript.</p>
+        <p>&copy; 2026 Jeonjimin. All rights reserved. <a href="https://jimindev.com" target="_blank" rel="noopener noreferrer">HOME</a></p>
       </footer>
     </div>
   );
