@@ -153,7 +153,7 @@ function App() {
             <span className="highlight">{personalInfo.name}</span>입니다.
           </h1>
           <p>{personalInfo.bio}</p>
-          <div className="hero-actions">xw
+          <div className="hero-actions">
             <a href="#projects" className="hero-btn">프로젝트 보기 →</a>
             <a href={`mailto:${personalInfo.email}`} className="hero-btn-secondary">✉ 연락하기</a>
           </div>
@@ -254,7 +254,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>&copy; 2026 Jeonjimin. All rights reserved.<a href="https://jimindev.com" target="_blank" rel="noopener noreferrer">HOME</a></p>
+        <p>&copy; 2026 Jeonjimin. All rights reserved.</p>
       </footer>
     </div>
   );
