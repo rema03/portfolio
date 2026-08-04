@@ -1,18 +1,17 @@
-FROM node:22-alpine AS build
+FROM node:22-alpine
 
 WORKDIR /app
 
+# 의존성 설치
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --only=production
 
+# 소스코드 복사
 COPY . .
-RUN npm run build
 
-FROM nginx:1.27-alpine
-
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/dist /usr/share/nginx/html
-
+# 포트 설정 (도커 환경에서는 기본으로 80 포트 사용)
+ENV PORT=80
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+# 서버 실행
+CMD ["npm", "start"]

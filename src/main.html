@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="전지민 - 웹 개발자 포트폴리오. React, TypeScript, Django 등을 활용한 프로젝트를 소개합니다." />
+  <title>Jimin's Portfolio</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="/src/index.css" />
+  <link rel="stylesheet" href="/src/App.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">Jimin.</div>
+        <ul class="nav-links">
+          <li><a href="#about">메인</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#projects">프로젝트</a></li>
+          <li><a href="#contact">연락하기</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="snap-page">
+        <section id="about" class="hero animate-on-scroll">
+          <h1>
+            안녕하세요<br />
+            <span class="highlight">전지민</span>입니다
+          </h1>
+          <p>공주대학교 스마트정보기술공학과 3학년에 재학 중이며 정보통신과 웹프로그래밍을 공부중입니다.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="hero-btn">프로젝트 보기 →</a>
+            <a href="https://github.com/rema03" target="_blank" rel="noopener noreferrer"
+              class="hero-btn-secondary">GitHub 보기 ↗</a>
+          </div>
+        </section>
+      </div>
+
+      <!-- Page 2: Profile -->
+      <div class="snap-page">
+        <section id="profile" class="profile animate-on-scroll">
+          <div class="profile-header">
+            <h2 class="section-title">Profile</h2>
+            <p class="section-subtitle">My skill, Education, and Interests.</p>
+          </div>
+          <div class="profile-content">
+            <div class="profile-section">
+              <h3 class="profile-subtitle"><span class="icon">⚡</span> skill</h3>
+              <div class="skills-grid">
+                <div class="skill-category">
+                  <h4>Languages</h4>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">JavaScript</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h4>Frontend</h4>
+                  <div class="skill-tags">
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h4>Backend</h4>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Python-Django</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-section">
+              <h3 class="profile-subtitle"><span class="icon">📚</span> Education</h3>
+              <div class="education-list">
+                <div class="education-item">
+                  <div class="education-header">
+                    <h4>Kongju National University</h4>
+                    <span class="education-period">2022 - Present</span>
+                  </div>
+                  <p class="education-desc">Dept. of Smart Information Technology (Junior)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-section">
+              <h3 class="profile-subtitle"><span class="icon">🎯</span> Interests</h3>
+              <div class="interests">
+                <span class="interest-tag">Web Development</span>
+                <span class="interest-tag">App Development</span>
+                <span class="interest-tag">Telecommunications</span>
+                <span class="interest-tag">IoT</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Page 3: Projects -->
+      <div class="snap-page projects-bg">
+        <section id="projects" class="animate-on-scroll">
+          <h2 class="section-title">주요 프로젝트</h2>
+          <p class="section-subtitle">직접 기획하고 개발한 프로젝트들입니다.</p>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-card-front">
+                <span class="project-title-emoji">🌐</span>
+                <h3 class="project-title">Portfolio Website</h3>
+              </div>
+              <div class="project-card-back">
+                <h3 class="project-back-title">Portfolio Website</h3>
+                <p class="project-desc">개인 포트폴리오 웹사이트로, React와 TypeScript를 사용하여 개발되었습니다.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">HTML</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/rema03/portfolio" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-front">
+                <span class="project-title-emoji">💬</span>
+                <h3 class="project-title">jimin-chat</h3>
+              </div>
+              <div class="project-card-back">
+                <h3 class="project-back-title">jimin-chat</h3>
+                <p class="project-desc">Django 프레임워크를 기반으로 구축된 실시간 채팅 애플리케이션입니다.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Python-Django</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">WebSocket</span>
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">SQLite</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/rema03/jimin-chat" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                  <a href="https://chat.jimindev.com" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-front">
+                <span class="project-title-emoji">🤖</span>
+                <h3 class="project-title">IOT클릭봇</h3>
+              </div>
+              <div class="project-card-back">
+                <h3 class="project-back-title">IOT클릭봇</h3>
+                <p class="project-desc">MQTT 프로토콜을 기반으로 한 IoT 원격 클릭 제어 시스템입니다. 실시간 상태 모니터링 및 제어 대시보드를 제공합니다.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">ATmega128</span>
+                  <span class="tech-tag">esp8266(Arduino)</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Express</span>
+                  <span class="tech-tag">MQTT</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/rema03/iot" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                  <a href="https://iot.jimindev.com" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-front">
+                <span class="project-title-emoji">🛍️</span>
+                <h3 class="project-title">jiminstore</h3>
+              </div>
+              <div class="project-card-back">
+                <h3 class="project-back-title">jiminstore</h3>
+                <p class="project-desc">지민 스토어는 next.js와 typescript와 tailwindcss를 사용하여 제작된 쇼핑몰 웹사이트입니다. 사용자 친화적인 UI와 원활한
+                  쇼핑 경험을 제공합니다.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">Next.js</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">TailwindCSS</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/rema03/store" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                  <a href="https://shop.jimindev.com" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card coming-soon">
+              <div class="project-card-front">
+                <span class="project-title-emoji">⏳</span>
+                <h3 class="project-title">준비 중...</h3>
+              </div>
+              <div class="project-card-back">
+                <h3 class="project-back-title">준비 중...</h3>
+                <p class="project-desc">새로운 프로젝트가 곧 추가될 예정입니다.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Page 4: Contact + Footer -->
+      <div class="snap-page snap-page--contact">
+        <section id="contact" class="contact animate-on-scroll">
+          <h2 class="section-title">연락하기</h2>
+          <p>궁금한 점이 있으시다면 언제든 편하게 메시지를 남겨주세요!</p>
+          <form id="contact-form" class="contact-form">
+            <input type="hidden" name="emailTo" value="user@jimindev.com">
+            <input type="hidden" name="to" value="user@jimindev.com">
+            <!-- Honeypot field (hidden from real users) -->
+            <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+            <div class="form-group">
+              <input type="text" id="nickname" name="nickname" required placeholder="닉네임 / 이름">
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" required placeholder="답변 받으실 이메일">
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" required placeholder="내용을 입력해주세요" rows="5"></textarea>
+            </div>
+            <button type="submit" class="contact-btn submit-btn" id="submit-btn">✉ 메시지 보내기</button>
+          </form>
+        </section>
+        <footer class="footer">
+          <p>&copy; 2026 Jeonjimin. All rights reserved.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

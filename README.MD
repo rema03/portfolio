@@ -1,73 +1,40 @@
-# React + TypeScript + Vite
+# Jimin's Portfolio
 
-이 템플릿은 Vite에서 HMR(Hot Module Replacement)과 일부 ESLint 규칙을 사용하여 React를 실행할 수 있는 최소한의 설정을 제공합니다.
+웹 개발자 전지민의 개인 포트폴리오 웹사이트입니다.
 
-현재 두 가지 공식 플러그인을 사용할 수 있습니다:
+## 🛠 기술 스택 (Tech Stack)
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript
+- **Backend**: Node.js, Express
+- **Deployment**: Docker, Ubuntu
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react): [Oxc](https://oxc.rs)를 사용합니다.
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc): [SWC](https://swc.rs/)를 사용합니다.
+## ✨ 주요 기능 (Features)
+- **반응형 디자인 (Responsive Design)**: 데스크톱 및 모바일 환경에 최적화된 레이아웃 제공
+- **부드러운 스크롤 (Smooth Scrolling & Snap)**: CSS Scroll Snap을 활용한 깔끔한 섹션 이동
+- **보안 폼 전송 (Secure Contact Form)**:
+  - 구글 앱스 스크립트(Google Apps Script) 연동 메일 전송
+  - Honeypot 기법을 활용한 스팸 봇 자동 차단
+  - 브라우저에 구글 웹앱 URL을 노출하지 않고 Node.js 서버(`/api/contact`)를 경유하는 보안 설계
 
-## React Compiler
+## 🚀 로컬 실행 방법 (How to run locally)
 
-React Compiler는 개발 및 빌드 성능에 미치는 영향으로 인해 이 템플릿에서는 활성화되지 않았습니다. 컴파일러를 추가하려면 [이 문서](https://react.dev/learn/react-compiler/installation)를 참조하세요.
+이 프로젝트는 Vite나 React 같은 빌드 도구 없이, 순수 Node.js(Express) 환경에서 실행됩니다.
 
-## ESLint 설정 확장
+```bash
+# 1. 의존성 설치
+npm install
 
-프로덕션 애플리케이션을 개발하는 경우, 타입 인식이 가능한 린트 규칙을 활성화하도록 설정을 업데이트하는 것을 권장합니다:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // 다른 설정들...
-
-      // tseslint.configs.recommended를 제거하고 아래 설정으로 대체
-      tseslint.configs.recommendedTypeChecked,
-      // 또는 더 엄격한 규칙을 위해 아래 설정 사용
-      tseslint.configs.strictTypeChecked,
-      // 선택적으로 스타일 관련 규칙을 위해 아래 설정 추가
-      tseslint.configs.stylisticTypeChecked,
-
-      // 다른 설정들...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // 다른 옵션들...
-    },
-  },
-])
+# 2. 서버 실행 (기본 포트: 3000)
+npm start
 ```
 
-React 전용 린트 규칙을 위해 [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x)와 [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom)을 설치할 수도 있습니다:
+서버가 실행되면 브라우저에서 `http://localhost:3000` 으로 접속할 수 있습니다.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🐳 도커 실행 방법 (How to run with Docker)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // 다른 설정들...
-      // React 린트 규칙 활성화
-      reactX.configs['recommended-typescript'],
-      // React DOM 린트 규칙 활성화
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // 다른 옵션들...
-    },
-  },
-])
+```bash
+# 1. 도커 이미지 빌드
+docker build -t portfolio .
+
+# 2. 도커 컨테이너 실행 (웹 표준 포트인 80번 포트로 실행)
+docker run -p 80:80 -d portfolio
 ```
