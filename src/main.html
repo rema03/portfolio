@@ -5,251 +5,294 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="전지민 - 웹 개발자 포트폴리오. React, TypeScript, Django 등을 활용한 프로젝트를 소개합니다." />
-  <title>Jimin's Portfolio</title>
-  <link rel="stylesheet" as="style" crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <meta name="description" content="전지민 - 웹 개발자 포트폴리오. React, TypeScript, Django, IoT 프로젝트 소개." />
+  <title>Jimin. Portfolio</title>
   <link rel="stylesheet" href="/src/index.css" />
   <link rel="stylesheet" href="/src/App.css" />
-  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
 </head>
 
 <body>
-  <div class="app">
-    <header class="header">
+  <div class="grain">
+    <!-- Header -->
+    <header class="header" id="main-header">
       <nav class="nav">
-        <div class="logo">Jimin.</div>
-        <ul class="nav-links">
-          <li><a href="#about">Main</a></li>
-          <li><a href="#profile">Profile</a></li>
-          <li><a href="#projects">Project</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <span class="logo">
+          Jimin<span class="logo-dot">.</span>
+        </span>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="#hero" class="nav-item active" data-nav="hero">Main</a></li>
+            <li><a href="#profile" class="nav-item" data-nav="profile">Profile</a></li>
+            <li><a href="#projects" class="nav-item" data-nav="projects">Project</a></li>
+            <li><a href="#contact" class="nav-item" data-nav="contact">Contact</a></li>
+          </ul>
+          <!-- Theme Toggle Button -->
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <span id="theme-toggle-icon">🌙</span>
+          </button>
+        </div>
       </nav>
     </header>
 
+    <!-- Pagination Dots -->
+    <div class="pagination-dots">
+      <a href="#hero" class="pagination-dot active" data-nav="hero" aria-label="Go to Main"></a>
+      <a href="#profile" class="pagination-dot" data-nav="profile" aria-label="Go to Profile"></a>
+      <a href="#projects" class="pagination-dot" data-nav="projects" aria-label="Go to Project"></a>
+      <a href="#contact" class="pagination-dot" data-nav="contact" aria-label="Go to Contact"></a>
+    </div>
+
     <main>
-      <div class="snap-page">
-        <section id="about" class="hero animate-on-scroll">
-          <h1>
-            안녕하세요<br />
-            <span class="highlight">전지민</span>입니다
+      <!-- Hero -->
+      <div id="hero" class="hero-container">
+        <div class="hero-glow"></div>
+        <div class="hero-line"></div>
+        <div class="hero-content">
+          <!-- Badge -->
+          <div class="hero-badge anim-fade-up">
+            <span class="badge-dot"></span>
+            <span class="badge-text">공주대학교 스마트정보기술공학과 3학년</span>
+          </div>
+
+          <!-- Main Heading -->
+          <h1 class="hero-title anim-fade-up">
+            안녕하세요,<br />
+            <span class="hero-name-stroke">전지민</span>입니다
           </h1>
-          <p>공주대학교 스마트정보기술공학과 3학년에 재학 중이며 정보통신과 웹프로그래밍을 공부중입니다.</p>
-          <div class="hero-actions">
-            <a href="#projects" class="hero-btn">프로젝트 보기 →</a>
-            <a href="https://github.com/rema03" target="_blank" rel="noopener noreferrer"
-              class="hero-btn-secondary">GitHub 보기 ↗</a>
+
+          <!-- Subtitle -->
+          <p class="hero-sub anim-fade-up">
+            정보통신과 웹 프로그래밍을 공부하며<br />
+            사용자 경험을 중심으로 개발합니다.
+          </p>
+
+          <!-- Actions -->
+          <div class="hero-actions anim-fade-up">
+            <a href="#projects" class="btn-primary">프로젝트 보기 →</a>
+            <a href="https://github.com/rema03" target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub ↗</a>
+          </div>
+
+          <!-- Scroll Indicator -->
+          <div class="scroll-indicator anim-fade-in">
+            <div class="scroll-mouse">
+              <div class="scroll-dot"></div>
+            </div>
+            <span class="scroll-label">SCROLL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile -->
+      <div class="profile-wrapper">
+        <section id="profile" class="profile-container anim-section">
+          <div>
+            <p class="section-label">About Me</p>
+            <h2 class="section-title-lg">Profile</h2>
+          </div>
+
+          <div class="profile-grid">
+            <!-- Skills -->
+            <div class="profile-card">
+              <h3 class="profile-card-title"><span>⚡</span> Skills</h3>
+              <div class="skills-list">
+                <div>
+                  <p class="skill-cat-label">Languages</p>
+                  <div class="skill-tags">
+                    <span class="skill-tag-pill">Python</span>
+                    <span class="skill-tag-pill">C/C++</span>
+                    <span class="skill-tag-pill">JavaScript</span>
+                  </div>
+                </div>
+                <div>
+                  <p class="skill-cat-label">Frontend</p>
+                  <div class="skill-tags">
+                    <span class="skill-tag-pill">React</span>
+                    <span class="skill-tag-pill">TypeScript</span>
+                    <span class="skill-tag-pill">HTML</span>
+                    <span class="skill-tag-pill">CSS</span>
+                  </div>
+                </div>
+                <div>
+                  <p class="skill-cat-label">Backend</p>
+                  <div class="skill-tags">
+                    <span class="skill-tag-pill">Django</span>
+                    <span class="skill-tag-pill">Node.js</span>
+                    <span class="skill-tag-pill">Express</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Education -->
+            <div class="profile-card">
+              <h3 class="profile-card-title"><span>📚</span> Education</h3>
+              <div class="edu-box">
+                <div class="edu-header">
+                  <h4 class="edu-school">Kongju National University</h4>
+                  <span class="edu-period">2022 – Present</span>
+                </div>
+                <p class="edu-dept">Dept. of Smart Information Technology</p>
+                <p class="edu-year">Junior (3rd year)</p>
+              </div>
+            </div>
+
+            <!-- Interests -->
+            <div class="profile-card">
+              <h3 class="profile-card-title"><span>🎯</span> Interests</h3>
+              <div class="interests-tags">
+                <span class="interest-pill">Web Development</span>
+                <span class="interest-pill">App Development</span>
+                <span class="interest-pill">Telecommunications</span>
+                <span class="interest-pill">IoT</span>
+              </div>
+            </div>
           </div>
         </section>
       </div>
 
-      <!-- Page 2: Profile -->
-      <div class="snap-page">
-        <section id="profile" class="profile animate-on-scroll">
-          <div class="profile-header">
-            <h2 class="section-title">Profile</h2>
-            <p class="section-subtitle">My skill, Education, and Interests.</p>
+      <!-- Projects -->
+      <div class="projects-wrapper">
+        <section id="projects" class="projects-container anim-section">
+          <div>
+            <p class="section-label">Work</p>
+            <h2 class="section-title-lg">주요 프로젝트</h2>
+            <p class="projects-subtext">직접 기획하고 개발한 프로젝트들입니다.</p>
           </div>
-          <div class="profile-content">
-            <div class="profile-section">
-              <h3 class="profile-subtitle"><span class="icon">⚡</span> skill</h3>
-              <div class="skills-grid">
-                <div class="skill-category">
-                  <h4>Languages</h4>
-                  <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">C/C++</span>
-                    <span class="skill-tag">JavaScript</span>
-                  </div>
-                </div>
-                <div class="skill-category">
-                  <h4>Frontend</h4>
-                  <div class="skill-tags">
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                  </div>
-                </div>
-                <div class="skill-category">
-                  <h4>Backend</h4>
-                  <div class="skill-tags">
-                    <span class="skill-tag">Python-Django</span>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div class="profile-section">
-              <h3 class="profile-subtitle"><span class="icon">📚</span> Education</h3>
-              <div class="education-list">
-                <div class="education-item">
-                  <div class="education-header">
-                    <h4>Kongju National University</h4>
-                    <span class="education-period">2022 - Present</span>
-                  </div>
-                  <p class="education-desc">Dept. of Smart Information Technology (Junior)</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="profile-section">
-              <h3 class="profile-subtitle"><span class="icon">🎯</span> Interests</h3>
-              <div class="interests">
-                <span class="interest-tag">Web Development</span>
-                <span class="interest-tag">App Development</span>
-                <span class="interest-tag">Telecommunications</span>
-                <span class="interest-tag">IoT</span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- Page 3: Projects -->
-      <div class="snap-page projects-bg">
-        <section id="projects" class="animate-on-scroll">
-          <h2 class="section-title">주요 프로젝트</h2>
-          <p class="section-subtitle">직접 기획하고 개발한 프로젝트들입니다.</p>
           <div class="projects-grid">
+            <!-- Project 1 -->
             <div class="project-card">
-              <div class="project-card-front">
-                <span class="project-title-emoji">🌐</span>
-                <h3 class="project-title">Portfolio Website</h3>
+              <div class="project-accent-line"></div>
+              <div class="project-front">
+                <span class="project-emoji">🌐</span>
+                <h3 class="project-front-title">Portfolio Website</h3>
               </div>
-              <div class="project-card-back">
+              <div class="project-back">
                 <h3 class="project-back-title">Portfolio Website</h3>
                 <p class="project-desc">개인 포트폴리오 웹사이트로, React와 TypeScript를 사용하여 개발되었습니다.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">React</span>
-                  <span class="tech-tag">TypeScript</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">HTML</span>
+                <div class="project-tech-tags">
+                  <span class="tech-tag-sm">React</span>
+                  <span class="tech-tag-sm">TypeScript</span>
+                  <span class="tech-tag-sm">CSS</span>
                 </div>
-                <div class="project-links">
-                  <a href="https://github.com/rema03/portfolio" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <div class="project-link-btns">
+                  <a href="https://github.com/rema03/portfolio" target="_blank" rel="noopener noreferrer" class="btn-github">GitHub ↗</a>
                 </div>
               </div>
             </div>
 
+            <!-- Project 2 -->
             <div class="project-card">
-              <div class="project-card-front">
-                <span class="project-title-emoji">💬</span>
-                <h3 class="project-title">jimin-chat</h3>
+              <div class="project-accent-line"></div>
+              <div class="project-front">
+                <span class="project-emoji">💬</span>
+                <h3 class="project-front-title">jimin-chat</h3>
               </div>
-              <div class="project-card-back">
+              <div class="project-back">
                 <h3 class="project-back-title">jimin-chat</h3>
                 <p class="project-desc">Django 프레임워크를 기반으로 구축된 실시간 채팅 애플리케이션입니다.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">Python-Django</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">WebSocket</span>
-                  <span class="tech-tag">HTML</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">SQLite</span>
+                <div class="project-tech-tags">
+                  <span class="tech-tag-sm">Django</span>
+                  <span class="tech-tag-sm">WebSocket</span>
+                  <span class="tech-tag-sm">JavaScript</span>
+                  <span class="tech-tag-sm">SQLite</span>
                 </div>
-                <div class="project-links">
-                  <a href="https://github.com/rema03/jimin-chat" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                  <a href="https://chat.jimindev.com" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                <div class="project-link-btns">
+                  <a href="https://github.com/rema03/jimin-chat" target="_blank" rel="noopener noreferrer" class="btn-github">GitHub ↗</a>
+                  <a href="https://chat.jimindev.com" target="_blank" rel="noopener noreferrer" class="btn-live">Live ↗</a>
                 </div>
               </div>
             </div>
 
+            <!-- Project 3 -->
             <div class="project-card">
-              <div class="project-card-front">
-                <span class="project-title-emoji">🤖</span>
-                <h3 class="project-title">IOT클릭봇</h3>
+              <div class="project-accent-line"></div>
+              <div class="project-front">
+                <span class="project-emoji">🤖</span>
+                <h3 class="project-front-title">IOT클릭봇</h3>
               </div>
-              <div class="project-card-back">
+              <div class="project-back">
                 <h3 class="project-back-title">IOT클릭봇</h3>
-                <p class="project-desc">MQTT 프로토콜을 기반으로 한 IoT 원격 클릭 제어 시스템입니다. 실시간 상태 모니터링 및 제어 대시보드를 제공합니다.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">ATmega128</span>
-                  <span class="tech-tag">esp8266(Arduino)</span>
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">Express</span>
-                  <span class="tech-tag">MQTT</span>
+                <p class="project-desc">MQTT 프로토콜 기반 IoT 원격 클릭 제어 시스템. 실시간 상태 모니터링 대시보드를 제공합니다.</p>
+                <div class="project-tech-tags">
+                  <span class="tech-tag-sm">ATmega128</span>
+                  <span class="tech-tag-sm">Arduino</span>
+                  <span class="tech-tag-sm">Node.js</span>
+                  <span class="tech-tag-sm">MQTT</span>
                 </div>
-                <div class="project-links">
-                  <a href="https://github.com/rema03/iot" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                  <a href="https://iot.jimindev.com" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                <div class="project-link-btns">
+                  <a href="https://github.com/rema03/iot" target="_blank" rel="noopener noreferrer" class="btn-github">GitHub ↗</a>
+                  <a href="https://iot.jimindev.com" target="_blank" rel="noopener noreferrer" class="btn-live">Live ↗</a>
                 </div>
               </div>
             </div>
 
+            <!-- Project 4 -->
             <div class="project-card">
-              <div class="project-card-front">
-                <span class="project-title-emoji">🛍️</span>
-                <h3 class="project-title">jiminstore</h3>
+              <div class="project-accent-line"></div>
+              <div class="project-front">
+                <span class="project-emoji">🛍️</span>
+                <h3 class="project-front-title">jiminstore</h3>
               </div>
-              <div class="project-card-back">
+              <div class="project-back">
                 <h3 class="project-back-title">jiminstore</h3>
-                <p class="project-desc">지민 스토어는 next.js와 typescript와 tailwindcss를 사용하여 제작된 쇼핑몰 웹사이트입니다. 사용자 친화적인 UI와 원활한
-                  쇼핑 경험을 제공합니다.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">Next.js</span>
-                  <span class="tech-tag">TypeScript</span>
-                  <span class="tech-tag">TailwindCSS</span>
+                <p class="project-desc">Next.js + TypeScript + TailwindCSS로 제작된 사용자 친화적인 쇼핑몰 웹사이트.</p>
+                <div class="project-tech-tags">
+                  <span class="tech-tag-sm">Next.js</span>
+                  <span class="tech-tag-sm">TypeScript</span>
+                  <span class="tech-tag-sm">TailwindCSS</span>
                 </div>
-                <div class="project-links">
-                  <a href="https://github.com/rema03/store" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                  <a href="https://shop.jimindev.com" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                <div class="project-link-btns">
+                  <a href="https://github.com/rema03/store" target="_blank" rel="noopener noreferrer" class="btn-github">GitHub ↗</a>
+                  <a href="https://shop.jimindev.com" target="_blank" rel="noopener noreferrer" class="btn-live">Live ↗</a>
                 </div>
               </div>
             </div>
 
-            <div class="project-card coming-soon">
-              <div class="project-card-front">
-                <span class="project-title-emoji">⏳</span>
-                <h3 class="project-title">준비 중...</h3>
-              </div>
-              <div class="project-card-back">
-                <h3 class="project-back-title">준비 중...</h3>
-                <p class="project-desc">새로운 프로젝트가 곧 추가될 예정입니다.</p>
-              </div>
+            <!-- Project Coming Soon -->
+            <div class="project-card-coming">
+              <span style="font-size: 2rem;">⏳</span>
+              <p class="coming-label">준비 중...</p>
             </div>
           </div>
         </section>
       </div>
 
-      <!-- Page 4: Contact + Footer -->
-      <div class="snap-page snap-page--contact">
-        <section id="contact" class="contact animate-on-scroll">
-          <h2 class="section-title">연락하기</h2>
-          <p>궁금한 점이 있으시다면 언제든 편하게 메시지를 남겨주세요!</p>
+      <!-- Contact Section -->
+      <div class="contact-wrapper">
+        <section id="contact" class="contact-container anim-section">
+          <p class="section-label">Get in Touch</p>
+          <h2 class="section-title-lg">연락하기</h2>
+          <p class="contact-desc">궁금한 점이 있으시다면 언제든 편하게 메시지를 남겨주세요!</p>
+
+          <!-- Success Message Container -->
+          <div id="contact-success-msg" class="contact-success" style="display: none;">
+            ✓ 메시지가 전송되었습니다. 감사합니다!
+          </div>
+
+          <!-- Contact Form -->
           <form id="contact-form" class="contact-form">
             <input type="hidden" name="emailTo" value="user@jimindev.com">
             <input type="hidden" name="to" value="user@jimindev.com">
-            <!-- Honeypot field (hidden from real users) -->
+            <!-- Honeypot -->
             <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
-            <div class="form-group">
-              <input type="text" id="nickname" name="nickname" required placeholder="닉네임 / 이름">
-            </div>
-            <div class="form-group">
-              <input type="email" id="email" name="email" required placeholder="답변 받으실 이메일">
-            </div>
-            <div class="form-group">
-              <textarea id="message" name="message" required placeholder="내용을 입력해주세요" rows="5"></textarea>
-            </div>
-            <button type="submit" class="contact-btn submit-btn" id="submit-btn">✉ 메시지 보내기</button>
+
+            <input type="text" name="nickname" required placeholder="닉네임 / 이름" class="form-input" />
+            <input type="email" name="email" required placeholder="답변 받으실 이메일" class="form-input" />
+            <textarea name="message" required placeholder="내용을 입력해주세요" rows="5" class="form-textarea"></textarea>
+            
+            <button type="submit" id="submit-btn" class="contact-btn">✉ 메시지 보내기</button>
           </form>
         </section>
 
-        <!-- footer -->
+        <!-- Footer -->
         <footer class="footer">
-          <p>&copy; 2026 Jeonjimin. All rights reserved.</p>
+          © 2026 Jeonjimin. All rights reserved.
         </footer>
       </div>
     </main>
-
-    <!-- Pagination Dots -->
-    <div class="pagination">
-      <div class="dot active" data-target="about"></div>
-      <div class="dot" data-target="profile"></div>
-      <div class="dot" data-target="projects"></div>
-      <div class="dot" data-target="contact"></div>
-    </div>
   </div>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 
