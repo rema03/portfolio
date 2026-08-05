@@ -7,13 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="전지민 - 웹 개발자 포트폴리오. React, TypeScript, Django 등을 활용한 프로젝트를 소개합니다." />
   <title>Jimin's Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
   <link rel="stylesheet" href="/src/index.css" />
   <link rel="stylesheet" href="/src/App.css" />
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
 </head>
 
 <body>
@@ -22,111 +20,93 @@
       <nav class="nav">
         <div class="logo">Jimin.</div>
         <ul class="nav-links">
-          <li><a href="#about">메인</a></li>
-          <li><a href="#profile">프로필</a></li>
-          <li><a href="#projects">프로젝트</a></li>
-          <li><a href="#contact">연락처</a></li>
+          <li><a href="#about">Main</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#projects">Project</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section id="about" class="hero animate-on-scroll">
-        <div class="hero-badge">
-          ✦ 웹 개발을 공부하는 대학생
-        </div>
-        <h1>
-          안녕하세요,<br />
-          <span class="highlight">지민</span>입니다.
-        </h1>
-        <p>공주대학교 스마트정보기술공학과 3학년에 재학 중이며, 정보통신과 웹프로그래밍을 공부중입니다.</p>
-        <div class="hero-actions">
-          <a href="#projects" class="hero-btn">프로젝트 보기 →</a>
-          <a href="mailto:jeonjimin@smail.kongju.ac.kr" class="hero-btn-secondary">✉ 연락하기</a>
-        </div>
-      </section>
+      <div class="snap-page">
+        <section id="about" class="hero animate-on-scroll">
+          <h1>
+            안녕하세요<br />
+            <span class="highlight">전지민</span>입니다
+          </h1>
+          <p>공주대학교 스마트정보기술공학과 3학년에 재학 중이며 정보통신과 웹프로그래밍을 공부중입니다.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="hero-btn">프로젝트 보기 →</a>
+            <a href="https://github.com/rema03" target="_blank" rel="noopener noreferrer"
+              class="hero-btn-secondary">GitHub 보기 ↗</a>
+          </div>
+        </section>
+      </div>
 
-      <section id="profile" class="profile animate-on-scroll">
-        <h2 class="section-title">프로필</h2>
-        <p class="section-subtitle">저의 기술 스택과 경력, 관심 분야를 소개합니다.</p>
-        <div class="profile-content">ㄱ
-          <div class="profile-section">
-            <h3 class="profile-subtitle"><span class="icon">⚡</span> 기술 스택</h3>
-            <div class="skills-grid">
-              <div class="skill-category">
-                <h4>프로그래밍 언어</h4>
-                <div class="skill-tags">
-                  <span class="skill-tag">Python</span>
-                  <span class="skill-tag">C/C++</span>
-                  <span class="skill-tag">JavaScript</span>
+      <!-- Page 2: Profile -->
+      <div class="snap-page">
+        <section id="profile" class="profile animate-on-scroll">
+          <div class="profile-header">
+            <h2 class="section-title">Profile</h2>
+            <p class="section-subtitle">My skill, Education, and Interests.</p>
+          </div>
+          <div class="profile-content">
+            <div class="profile-section">
+              <h3 class="profile-subtitle"><span class="icon">⚡</span> skill</h3>
+              <div class="skills-grid">
+                <div class="skill-category">
+                  <h4>Languages</h4>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">JavaScript</span>
+                  </div>
                 </div>
-              </div>
-              <div class="skill-category">
-                <h4>프론트엔드</h4>
-                <div class="skill-tags">
-                  <span class="skill-tag">HTML</span>
-                  <span class="skill-tag">CSS</span>
+                <div class="skill-category">
+                  <h4>Frontend</h4>
+                  <div class="skill-tags">
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                  </div>
                 </div>
-              </div>
-              <div class="skill-category">
-                <h4>백엔드</h4>
-                <div class="skill-tags">
-                  <span class="skill-tag">Python-Django</span>
+                <div class="skill-category">
+                  <h4>Backend</h4>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Python-Django</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="profile-section">
-            <h3 class="profile-subtitle"><span class="icon">📚</span> 경력 및 교육</h3>
-            <div class="education-list">
-              <div class="education-item">
-                <div class="education-header">
-                  <h4>천안신안초등학교</h4>
-                  <span class="education-period">2010-2016</span>
+            <div class="profile-section">
+              <h3 class="profile-subtitle"><span class="icon">📚</span> Education</h3>
+              <div class="education-list">
+                <div class="education-item">
+                  <div class="education-header">
+                    <h4>Kongju National University</h4>
+                    <span class="education-period">2022 - Present</span>
+                  </div>
+                  <p class="education-desc">Dept. of Smart Information Technology (Junior)</p>
                 </div>
               </div>
-              <div class="education-item">
-                <div class="education-header">
-                  <h4>천성중학교</h4>
-                  <span class="education-period">2016-2019</span>
-                </div>
-              </div>
-              <div class="education-item">
-                <div class="education-header">
-                  <h4>천안중앙고등학교</h4>
-                  <span class="education-period">2019-2022</span>
-                </div>
-              </div>
-              <div class="education-item">
-                <div class="education-header">
-                  <h4>육군 병장 만기 전역</h4>
-                  <span class="education-period">2022 - 2024</span>
-                </div>
-              </div>
-              <div class="education-item">
-                <div class="education-header">
-                  <h4>공주대학교</h4>
-                  <span class="education-period">2022 - 현재</span>
-                </div>
-                <p class="education-desc">스마트정보기술공학과 (3학년 재학)</p>
+            </div>
+
+            <div class="profile-section">
+              <h3 class="profile-subtitle"><span class="icon">🎯</span> Interests</h3>
+              <div class="interests">
+                <span class="interest-tag">Web Development</span>
+                <span class="interest-tag">App Development</span>
+                <span class="interest-tag">Telecommunications</span>
+                <span class="interest-tag">IoT</span>
               </div>
             </div>
           </div>
+        </section>
+      </div>
 
-          <div class="profile-section">
-            <h3 class="profile-subtitle"><span class="icon">🎯</span> 관심 분야</h3>
-            <div class="interests">
-              <span class="interest-tag">웹 개발</span>
-              <span class="interest-tag">어플 개발</span>
-              <span class="interest-tag">정보통신</span>
-              <span class="interest-tag">IoT</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="projects-bg">
+      <!-- Page 3: Projects -->
+      <div class="snap-page projects-bg">
         <section id="projects" class="animate-on-scroll">
           <h2 class="section-title">주요 프로젝트</h2>
           <p class="section-subtitle">직접 기획하고 개발한 프로젝트들입니다.</p>
@@ -232,16 +212,43 @@
         </section>
       </div>
 
-      <section id="contact" class="contact animate-on-scroll">
-        <h2 class="section-title">연락하기</h2>
-        <p>문의사항은 아래 버튼을 통해 메일을 보내주세요!</p>
-        <a href="mailto:jeonjimin@smail.kongju.ac.kr" class="contact-btn">✉ 메일 보내기</a>
-      </section>
+      <!-- Page 4: Contact + Footer -->
+      <div class="snap-page snap-page--contact">
+        <section id="contact" class="contact animate-on-scroll">
+          <h2 class="section-title">연락하기</h2>
+          <p>궁금한 점이 있으시다면 언제든 편하게 메시지를 남겨주세요!</p>
+          <form id="contact-form" class="contact-form">
+            <input type="hidden" name="emailTo" value="user@jimindev.com">
+            <input type="hidden" name="to" value="user@jimindev.com">
+            <!-- Honeypot field (hidden from real users) -->
+            <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+            <div class="form-group">
+              <input type="text" id="nickname" name="nickname" required placeholder="닉네임 / 이름">
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" required placeholder="답변 받으실 이메일">
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" required placeholder="내용을 입력해주세요" rows="5"></textarea>
+            </div>
+            <button type="submit" class="contact-btn submit-btn" id="submit-btn">✉ 메시지 보내기</button>
+          </form>
+        </section>
+
+        <!-- footer -->
+        <footer class="footer">
+          <p>&copy; 2026 Jeonjimin. All rights reserved.</p>
+        </footer>
+      </div>
     </main>
 
-    <footer class="footer">
-      <p>&copy; 2026 Jeonjimin. All rights reserved.</p>
-    </footer>
+    <!-- Pagination Dots -->
+    <div class="pagination">
+      <div class="dot active" data-target="about"></div>
+      <div class="dot" data-target="profile"></div>
+      <div class="dot" data-target="projects"></div>
+      <div class="dot" data-target="contact"></div>
+    </div>
   </div>
   <script type="module" src="/src/main.js"></script>
 </body>
