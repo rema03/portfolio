@@ -1,6 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
   const appContainer = document.querySelector('.app');
 
+  // Initialize Lenis for smooth scrolling
+  const lenis = new Lenis({
+    wrapper: appContainer,
+    content: document.querySelector('main'),
+    lerp: 0.1,
+    duration: 1.2,
+    smoothWheel: true,
+    smoothTouch: false,
+    wheelMultiplier: 1,
+    touchMultiplier: 2,
+    infinite: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Custom JS Snapping to simulate scroll-snap without conflict
+  let snapTimeout;
+  lenis.on('scroll', () => {
+    clearTimeout(snapTimeout);
+    snapTimeout = setTimeout(() => {
+      let minDistance = Infinity;
+      let closestSection = null;
+      document.querySelectorAll('.snap-page').forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestSection = section;
+        }
+      });
+      // Snap to closest section if it's not perfectly aligned
+      if (closestSection && minDistance > 5) {
+        lenis.scrollTo(closestSection, { duration: 0.8, lock: false });
+      }
+    }, 150); // wait 150ms after scroll ends to snap
+  });
+
   // Intersection Observer for Scroll Animations
   const animationObserver = new IntersectionObserver(
     (entries) => {
@@ -22,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Active Navigation Link Highlighting on Scroll
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-links a');
+  const dots = document.querySelectorAll('.dot');
 
   const navObserver = new IntersectionObserver(
     (entries) => {
@@ -36,6 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
               link.classList.remove('active');
             }
           });
+
+          // Update Pagination Dots
+          dots.forEach((dot) => {
+            if (dot.getAttribute('data-target') === currentId) {
+              dot.classList.add('active');
+            } else {
+              dot.classList.remove('active');
+            }
+          });
         }
       });
     },
@@ -46,21 +97,35 @@ document.addEventListener('DOMContentLoaded', () => {
     navObserver.observe(section);
   });
 
-  // Smooth scroll for nav links within .app container
+  // Smooth scroll for nav links and dots within .app container
+  const handleScrollTo = (e, targetId) => {
+    e.preventDefault();
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) {
+      // Find the parent snap-page
+      const snapPage = targetEl.closest('.snap-page');
+      const finalTarget = snapPage ? snapPage : targetEl;
+
+      // Use Lenis for scrolling if available
+      if (typeof lenis !== 'undefined') {
+        lenis.scrollTo(finalTarget, { lock: true });
+      } else {
+        finalTarget.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   navLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
       const targetId = link.getAttribute('href').substring(1);
-      const targetEl = document.getElementById(targetId);
-      if (targetEl) {
-        // Find the parent snap-page
-        const snapPage = targetEl.closest('.snap-page');
-        if (snapPage) {
-          snapPage.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          targetEl.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+      handleScrollTo(e, targetId);
+    });
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', (e) => {
+      const targetId = dot.getAttribute('data-target');
+      handleScrollTo(e, targetId);
     });
   });
 

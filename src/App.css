@@ -4,30 +4,31 @@
 
 /* --- Design Tokens --- */
 :root {
-  --color-primary: #6366f1;
-  --color-primary-light: #818cf8;
-  --color-primary-dark: #4f46e5;
-  --color-primary-bg: #eef2ff;
-  --color-accent: #f59e0b;
-  --color-accent-bg: #fffbeb;
+  /* --- Monochrome Design Tokens --- */
+  --color-primary: #111111;
+  --color-primary-light: #555555;
+  --color-primary-dark: #000000;
+  --color-primary-bg: #f3f4f6;
+  --color-accent: #333333;
+  --color-accent-bg: #f9fafb;
 
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-tertiary: #94a3b8;
+  --text-primary: #000000;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
 
-  --bg-primary: #fafbfc;
+  --bg-primary: #ffffff;
   --bg-white: #ffffff;
-  --bg-warm: #faf8f5;
-  --bg-cool: #f0f4ff;
+  --bg-warm: #fafafa;
+  --bg-cool: #f5f5f5;
 
-  --border-light: rgba(148, 163, 184, 0.15);
-  --border-subtle: rgba(99, 102, 241, 0.1);
+  --border-light: rgba(0, 0, 0, 0.1);
+  --border-subtle: rgba(0, 0, 0, 0.05);
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.03);
-  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.12);
-  --shadow-primary: 0 8px 30px rgba(99, 102, 241, 0.2);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+  --shadow-primary: 0 8px 30px rgba(0, 0, 0, 0.15);
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -44,14 +45,12 @@
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+  /* scroll-snap-type removed to avoid conflict with Lenis */
 }
 
 .snap-page {
-  height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  min-height: 100vh;
+  /* scroll-snap-align removed */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -63,6 +62,40 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
+}
+
+/* ===== Pagination ===== */
+.pagination {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--text-tertiary);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+}
+
+.dot:hover {
+  border-color: var(--color-primary-light);
+  transform: scale(1.1);
+}
+
+.dot.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: scale(1.4);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
 }
 
 /* ===== Header / Navigation ===== */
@@ -450,8 +483,7 @@ section {
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-sm);
   min-height: 220px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   cursor: default;
   transition: all 0.45s var(--ease-out);
 }
@@ -474,22 +506,27 @@ section {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s var(--ease-out);
+  z-index: 3;
 }
 
 .project-card:hover::before {
   transform: scaleX(1);
 }
 
+/* Front and Back overlap using Grid */
+.project-card-front,
+.project-card-back {
+  grid-area: 1 / 1;
+}
+
 /* Title layer — always visible, centered */
 .project-card-front {
-  position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2.5rem 2rem;
-  flex: 1;
   text-align: center;
   transition: all 0.4s var(--ease-out);
 }
@@ -498,8 +535,6 @@ section {
   opacity: 0;
   transform: translateY(-20px);
   pointer-events: none;
-  position: absolute;
-  inset: 0;
 }
 
 .project-title {
@@ -518,8 +553,6 @@ section {
 
 /* Detail layer — revealed on hover */
 .project-card-back {
-  position: absolute;
-  inset: 0;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -528,12 +561,13 @@ section {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.4s var(--ease-out);
+  pointer-events: none;
 }
 
 .project-card:hover .project-card-back {
   opacity: 1;
   transform: translateY(0);
-  position: relative;
+  pointer-events: auto;
 }
 
 .project-back-title {
