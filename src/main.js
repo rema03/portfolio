@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 0. Theme Manager (Dark / Light)
   const savedTheme = localStorage.getItem('theme');
   const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  let currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'dark'); // Default to dark if not specified
+  let currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
 
   const applyTheme = (theme) => {
     document.documentElement.setAttribute('data-theme', theme);
